@@ -6,7 +6,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+<<<<<<< HEAD
     use \Illuminate\Auth\Authenticatable;
+=======
+>>>>>>> 03fa06c8ee2de980812edf2bfa3018ef238d2e49
     /**
      * The attributes that are mass assignable.
      *

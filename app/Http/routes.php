@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 Route::post('/signup',[
     'uses' => 'UserController@postSignUp',
@@ -28,3 +29,5 @@ Route::get('/dashboard',[
     'as' => 'dashboard'
 
 ]);
+=======
+>>>>>>> 03fa06c8ee2de980812edf2bfa3018ef238d2e49
