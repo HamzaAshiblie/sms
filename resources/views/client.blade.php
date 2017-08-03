@@ -134,27 +134,27 @@
                             <label for="edit-client-name" class="col-sm-4 control-label">اسم العميل: </label>
                             <label class="col-sm-1 control-label">: </label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="edit-client-name" placeholder="اسم العميل" name="edit-client-modal" autocomplete="off">
+                                <input type="text" class="form-control" id="edit-client-name" placeholder="اسم العميل" name="edit-client-modal" autocomplete="off" value="{{ $client->client_name }}">
                             </div>
                         </div> <!-- /form-group-->
                         <div class="form-group">
                             <label for="edit-client_company" class="col-sm-4 control-label">الشركة: </label>
                             <label class="col-sm-1 control-label">: </label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="edit-client_company" placeholder="الشركة" name="edit-client_company" autocomplete="off">
+                                <input type="text" class="form-control" id="edit-client_company" placeholder="الشركة" name="edit-client_company" autocomplete="off" value="{{ $client->client_company }}">
                             </div>
                         </div> <!-- /form-group-->
                         <div class="form-group">
                             <label for="edit-client_email" class="col-sm-4 control-label">البريد الإلكتروني: </label>
                             <label class="col-sm-1 control-label">: </label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="edit-client_email" placeholder="البريد الإلكتروني" name="edit-client_email" autocomplete="off">
+                                <input type="text" class="form-control" id="edit-client_email" placeholder="البريد الإلكتروني" name="edit-client_email" autocomplete="off" value="{{ $client->client_email }}">
                             </div>
                         </div> <!-- /form-group--><div class="form-group">
                             <label for="edit-client_phone" class="col-sm-4 control-label">الهاتف: </label>
                             <label class="col-sm-1 control-label">: </label>
                             <div class="col-sm-7">
-                                <input type="text" class="form-control" id="edit-client_phone" placeholder="الهاتف" name="edit-client_phone" autocomplete="off">
+                                <input type="text" class="form-control" id="edit-client_phone" placeholder="الهاتف" name="edit-client_phone" autocomplete="off" value="{{ $client->client_phone }}">
                             </div>
                         </div> <!-- /form-group-->
 
