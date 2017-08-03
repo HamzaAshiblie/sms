@@ -40,3 +40,7 @@ Route::get('/clientsingle',[
     'uses' => 'ClientController@getClientSingle',
     'as' => 'client.get',
 ]);
+Route::post('/clientsingle/edit',[
+    'uses' => 'ClientController@editClientSingle',
+    'as' => 'client.edit',
+]);
