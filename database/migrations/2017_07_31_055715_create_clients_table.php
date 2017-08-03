@@ -14,10 +14,10 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('supplier_name');
-            $table->string('supplier_company');
-            $table->string('supplier_email');
-            $table->string('supplier_phone');
+            $table->string('client_name');
+            $table->string('client_company');
+            $table->string('client_email');
+            $table->string('client_phone');
             $table->timestamps();
         });
     }

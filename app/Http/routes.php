@@ -28,3 +28,15 @@ Route::get('/dashboard',[
     'as' => 'dashboard',
     'middleware'=> 'auth'
 ]);
+Route::get('/client',[
+    'uses' => 'ClientController@getClient',
+    'as' => 'client',
+]);
+Route::post('/createclient',[
+    'uses' => 'ClientController@clientCreateclient',
+    'as' => 'client.create'
+]);
+Route::get('/clientsingle',[
+    'uses' => 'ClientController@getClientSingle',
+    'as' => 'client.get',
+]);
