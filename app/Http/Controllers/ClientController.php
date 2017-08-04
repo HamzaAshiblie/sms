@@ -10,7 +10,7 @@ class ClientController extends Controller
     public function getClient()
     {
         $clients = Client::all();
-        return view('client',['clients'=>$clients]);
+        return view('client',['clients'=>$clients,'class'=>'#nav-clients']);
     }
 
     public function getClientSingle(Request $request)
@@ -19,7 +19,7 @@ class ClientController extends Controller
         return response()->json($clients);
     }
 
-    public function clientCreateclient(Request $request)
+    public function clientCreateClient(Request $request)
     {
         $this->validate($request, [
             'client_name'=> 'required:clients',
@@ -42,6 +42,12 @@ class ClientController extends Controller
     }
     public function editClientSingle( Request $request)
     {
+        $this->validate($request, [
+            'client_name'=> 'required:clients',
+            'client_company'=>'required|max:120',
+            'client_email'=>'required|email',
+            'client_phone'=>'required|min:10'
+        ]);
         $client = Client::where('id',$request['id'])->first();
         $client->client_name = $request['client_name'];
         $client->client_company = $request['client_company'];
@@ -51,6 +57,7 @@ class ClientController extends Controller
         if ($client->update())
         {
             $message='تمت إضافة العميل بنجاح';
+            return response()->json($client,200);
         }
 
         return redirect()->route('client')->with(['message'=>$message]);

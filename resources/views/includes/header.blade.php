@@ -19,7 +19,7 @@
 
                     <li id="navDashboard"><a href="{{ route('dashboard') }}"><i class="glyphicon glyphicon-list-alt"></i>  الداشبورد</a></li>
 
-                    <li id="navBrand" class="active"><a href="{{ route('client') }}"><i class="glyphicon glyphicon-th-list"></i>  العملاء</a></li>
+                    <li id="nav-clients"><a href="{{ route('client') }}"><i class="glyphicon glyphicon-th-list"></i>  العملاء</a></li>
 
                     <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>
 

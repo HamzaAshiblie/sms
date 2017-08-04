@@ -33,7 +33,7 @@ Route::get('/client',[
     'as' => 'client',
 ]);
 Route::post('/createclient',[
-    'uses' => 'ClientController@clientCreateclient',
+    'uses' => 'ClientController@clientCreateClient',
     'as' => 'client.create'
 ]);
 Route::get('/clientsingle',[

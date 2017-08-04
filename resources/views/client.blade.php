@@ -8,7 +8,7 @@
 
         <ol class="breadcrumb">
             <li><a href="#">الرئيسية</a></li>
-            <li class="active">العملاء</li>
+            <li class="liClass">العملاء</li>
         </ol>
 
         <div class="panel panel-default">
@@ -21,7 +21,7 @@
                     <button class="btn btn-default" id="add-client-modal-btn"> <i class="glyphicon glyphicon-plus-sign"></i> إضافة عميل </button>
                 </div> <!-- /div-action -->
 
-                <table class="table">
+                <table class="table" id="clients_table" data-clients="{{$clients}}">
                     <thead>
                     <tr>
                         <th  style="text-align: right">العميل</th>
@@ -200,9 +200,10 @@
 </div><!-- /.modal -->
 <!-- /delete clients modal -->
 <script>
+    var navClass = '{{ $class }}';
     var token = '{{ Session::token() }}';
     var urlAddClient = '{{ route('client.create') }}';
-    var urlGetClient = '{{ route('client.get') }}';
+    var urlGetClient = '{{ route('client') }}';
     var urlEditClient = '{{ route('client.edit')}}';
 </script>
 @endsection
