@@ -44,3 +44,7 @@ Route::post('/clientsingle/edit',[
     'uses' => 'ClientController@editClientSingle',
     'as' => 'client.edit',
 ]);
+Route::post('/clientsingle/delete',[
+    'uses' => 'ClientController@deleteClientSingle',
+    'as' => 'client.delete',
+]);

@@ -43,7 +43,7 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a type="button" data-toggle="modal" id="edit-client-modal-btn" data-clientid="{{$client->id}}"> <i class="glyphicon glyphicon-edit"></i> تعديل</a></li>
-                                        <li><a type="button" data-toggle="modal" data-target="#removeCategoriesModal" id="removeCategoriesModalBtn" onclick=""> <i class="glyphicon glyphicon-trash"></i> حذف</a></li>
+                                        <li><a type="button" data-toggle="modal" data-clientid="{{$client->id}}" data-target="#removeCategoriesModal" id="remove-client-modal-btn" onclick=""> <i class="glyphicon glyphicon-trash"></i> حذف</a></li>
                                     </ul>
                                 </div>
                             </td>
@@ -205,5 +205,6 @@
     var urlAddClient = '{{ route('client.create') }}';
     var urlGetClient = '{{ route('client') }}';
     var urlEditClient = '{{ route('client.edit')}}';
+    var urlDeleteClient = '{{ route('client.delete')}}';
 </script>
 @endsection

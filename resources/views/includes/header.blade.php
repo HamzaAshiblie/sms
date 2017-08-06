@@ -17,9 +17,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li id="navDashboard"><a href="{{ route('dashboard') }}"><i class="glyphicon glyphicon-list-alt"></i>  الداشبورد</a></li>
+                    <li id="navDashboard" class="{{ Request::is('dashboard*') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><i class="glyphicon glyphicon-list-alt"></i>  الداشبورد</a></li>
 
-                    <li id="nav-clients"><a href="{{ route('client') }}"><i class="glyphicon glyphicon-th-list"></i>  العملاء</a></li>
+                    <li id="nav-clients" class="{{ Request::is('client*') ? 'active' : '' }}"><a href="{{ route('client') }}"><i class="glyphicon glyphicon-th-list"></i>  العملاء</a></li>
 
                     <li id="navCategories"><a href="categories.php"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>
 

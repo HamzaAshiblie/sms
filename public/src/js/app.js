@@ -3,18 +3,7 @@ var clientNameElement = null;
 var clientCompanyElement = null;
 var clientEmailElement = null;
 var clientPhoneElement = null;
-var classNav = null;
-if(navClass != null)
-{
-    classNav = navClass;
-    $(classNav).addClass('active');
-    $('.liClass').addClass('active');
-}else{
-    var navClass = null;
-}
 
-
-console.log(navClass);
 $('.panel').find('.div-body-modal').find('.div-add-client-modal').find('#add-client-modal-btn').on('click', function(event){
     event.preventDefault();
     $('#addClientsModal').modal();
@@ -61,6 +50,22 @@ $('#edit-clients-btn').on('click', function () {
         $(clientCompanyElement).text(msg['client_company']);
         $(clientEmailElement).text(msg['client_email']);
         $(clientPhoneElement).text(msg['client_phone']);
+        $('#edit-client-modal').modal('hide');
+    });
+});
+$('.panel').find('.div-body-modal').find('.table').find('.btn-group').find('.dropdown-menu').find('#remove-client-modal-btn').on('click', function(event){
+    event.preventDefault();
+    clientId = event.target.dataset['clientid'];
+    $('#delete-clients-modal').modal();
+});
+
+$('#delete-clients-btn').on('click', function () {
+    console.log(clientId);
+    $.ajax({
+        method:'post',
+        url:urlDeleteClient,
+        data:{id: clientId, _token: token}
+    }).done(function (msg) {
         $('#edit-client-modal').modal('hide');
     });
 });

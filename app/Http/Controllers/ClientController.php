@@ -63,4 +63,17 @@ class ClientController extends Controller
         return redirect()->route('client')->with(['message'=>$message]);
 
     }
+    public function deleteClientSingle( Request $request)
+    {
+        $client = Client::where('id',$request['id'])->first();
+        $message= 'حدث خطأ، لم يتم حذف العميل';
+        if ($client->delete())
+        {
+            $message='تمت حذف العميل بنجاح';
+            return response()->json($client,200);
+        }
+
+        return redirect()->route('client')->with(['message'=>$message]);
+
+    }
 }
