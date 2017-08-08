@@ -21,7 +21,7 @@
                     <button class="btn btn-default" id="add-client-modal-btn"> <i class="glyphicon glyphicon-plus-sign"></i> إضافة عميل </button>
                 </div> <!-- /div-action -->
 
-                <table class="table" id="clients_table" data-clients="{{$clients}}">
+                <table class="table" id="clients_table">
                     <thead>
                     <tr>
                         <th  style="text-align: right">العميل</th>
