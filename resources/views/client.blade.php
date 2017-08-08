@@ -8,7 +8,7 @@
 
         <ol class="breadcrumb">
             <li><a href="#">الرئيسية</a></li>
-            <li class="liClass">العملاء</li>
+            <li class="active">العملاء</li>
         </ol>
 
         <div class="panel panel-default">
@@ -54,6 +54,19 @@
 
                 </table>
                 <!-- /table -->
+
+                <!--PAGINATION-->
+                <div class="pagination">
+
+                    <a href="#1">&raquo;</a>
+
+                    @for($i = 1; $i <= /*{{$num_of_pages}}*/2; $i++)
+                        <a class="{{ Request::is('client-page'/*$num_of_pages*/) ? 'active' : '' }}" href="{{ route('client.page', ['page_num'=>$i]) }}">{{$i}}</a>
+                    @endfor
+                    <a href="#">&laquo;</a>
+
+                </div>
+                <!--/PAGINATION-->
 
             </div> <!-- /panel-body -->
         </div> <!-- /panel -->
@@ -199,8 +212,8 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /delete clients modal -->
+    {{$count}}
 <script>
-    var navClass = '{{ $class }}';
     var token = '{{ Session::token() }}';
     var urlAddClient = '{{ route('client.create') }}';
     var urlGetClient = '{{ route('client') }}';

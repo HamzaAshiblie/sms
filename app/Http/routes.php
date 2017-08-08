@@ -48,3 +48,7 @@ Route::post('/clientsingle/delete',[
     'uses' => 'ClientController@deleteClientSingle',
     'as' => 'client.delete',
 ]);
+Route::get('/client-page/{page_num}',[
+    'uses' => 'ClientController@getClientPage',
+    'as' => 'client.page',
+]);

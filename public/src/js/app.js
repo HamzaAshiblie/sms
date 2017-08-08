@@ -21,7 +21,7 @@ $('#add_client_modal_save').on('click', function () {
             _token: token}
     });
     $('#addClientsModal').modal('hide');
-});
+    $(location).attr('href',urlGetClient);});
 $('.panel').find('.div-body-modal').find('.table').find('.btn-group').find('.dropdown-menu').find('#edit-client-modal-btn').on('click', function(event){
     event.preventDefault();
     clientId = event.target.dataset['clientid'];
@@ -66,6 +66,12 @@ $('#delete-clients-btn').on('click', function () {
         url:urlDeleteClient,
         data:{id: clientId, _token: token}
     }).done(function (msg) {
-        $('#edit-client-modal').modal('hide');
+        $('#delete-clients-modal').modal('hide');
     });
+    $(location).attr('href',urlGetClient);
+});
+
+$('#show-btn').on('click', function () {
+    //$('#form1').css('display','block');
+    $('#form1').fadeToggle(500);
 });

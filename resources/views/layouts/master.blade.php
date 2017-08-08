@@ -5,8 +5,9 @@
     <link href="{{URL::to('src/css/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::to('src/css/bootstrap/css/bootstrap-theme.min.css')}}" rel="stylesheet">
     <link href="{{URL::to('src/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{URL::to('src/plugins/fullcalendar/fullcalendar.min.css')}}">
-    <link rel="stylesheet" href="{{URL::to('src/plugins/fullcalendar/fullcalendar.print.css'),array('media' => 'print')}}">
+    <link href="{{URL::to('src/plugins/fullcalendar/fullcalendar.min.css')}}" rel="stylesheet">
+    <link href="{{URL::to('src/plugins/fullcalendar/fullcalendar.print.css'),array('media' => 'print')}}" rel="stylesheet">
+    <link href="{{URL::to('src/css/app.css')}}" rel="stylesheet">
 </head>
 <body>
     @include('includes.header')
