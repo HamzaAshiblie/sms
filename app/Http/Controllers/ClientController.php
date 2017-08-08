@@ -9,8 +9,8 @@ class ClientController extends Controller
 {
     public function getClient()
     {
-        $clients = Client::all();
-        return view('client',['clients'=>$clients]);
+        $clients = Client::paginate(1);
+        return view('client',['clients'=> $clients]);
     }
 
     public function getClientSingle(Request $request)
@@ -18,21 +18,6 @@ class ClientController extends Controller
         $clients = Client::find($request['client_id']);
         return response()->json($clients);
     }
-
-    public function getClientPage($page_num)
-    {
-        $take = 3;
-        $count=0;
-        $page_skip = $page_num - 1;
-        $skip = ($page_skip*$take);
-        $clients = Client::select('id')->get();
-        $count = count($clients);
-        $num_of_pages = ceil($count/$take);
-        $clients = Client::skip($skip)->take($take)->get();
-        return view('client',['clients'=>$clients, 'count'=>$count, 'num_of_pages'=>$num_of_pages]);
-        //return response()->json($clients);
-    }
-
     public function clientCreateClient(Request $request)
     {
         $this->validate($request, [

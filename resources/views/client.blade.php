@@ -56,14 +56,9 @@
                 <!-- /table -->
 
                 <!--PAGINATION-->
-                <div class="pagination">
+                <div class="">
 
-                    <a href="#1">&raquo;</a>
-
-                    @for($i = 1; $i <= /*{{$num_of_pages}}*/2; $i++)
-                        <a class="{{ Request::is('client-page'/*$num_of_pages*/) ? 'active' : '' }}" href="{{ route('client.page', ['page_num'=>$i]) }}">{{$i}}</a>
-                    @endfor
-                    <a href="#">&laquo;</a>
+                    {{ $clients->links() }}
 
                 </div>
                 <!--/PAGINATION-->
@@ -212,7 +207,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!-- /delete clients modal -->
-    {{$count}}
+
 <script>
     var token = '{{ Session::token() }}';
     var urlAddClient = '{{ route('client.create') }}';
