@@ -23,6 +23,11 @@ Route::post('/signin',[
     'uses' => 'UserController@postSignIn',
     'as' => 'signin'
 ]);
+Route::get('/logout',[
+    'uses'=>'UserController@getLogout',
+    'as'=> 'logout',
+    'middleware'=> 'auth'
+]);
 Route::get('/dashboard',[
     'uses' => 'UserController@getDashboard',
     'as' => 'dashboard',
@@ -31,6 +36,7 @@ Route::get('/dashboard',[
 Route::get('/client',[
     'uses' => 'ClientController@getClient',
     'as' => 'client',
+    'middleware'=> 'auth'
 ]);
 Route::post('/createclient',[
     'uses' => 'ClientController@clientCreateClient',

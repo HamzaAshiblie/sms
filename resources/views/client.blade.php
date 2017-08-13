@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
     @include('includes.message-block')
 
     <div class="row">
@@ -21,7 +22,7 @@
                     <button class="btn btn-default" id="add-client-modal-btn"> <i class="glyphicon glyphicon-plus-sign"></i> إضافة عميل </button>
                 </div> <!-- /div-action -->
 
-                <table class="table" id="clients_table">
+                <table class="table" id="datatable">
                     <thead>
                     <tr>
                         <th  style="text-align: right">العميل</th>
@@ -209,6 +210,7 @@
 <!-- /delete clients modal -->
 
 <script>
+
     var token = '{{ Session::token() }}';
     var urlAddClient = '{{ route('client.create') }}';
     var urlGetClient = '{{ route('client') }}';

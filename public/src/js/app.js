@@ -18,10 +18,22 @@ $('#add_client_modal_save').on('click', function () {
             client_company: $('#client_company').val(),
             client_email: $('#client_email').val(),
             client_phone: $('#client_phone').val(),
-            _token: token}
+            _token: token},
+            error: function(data){
+            var errors = data.responseJSON;
+            console.log('Json:');
+            console.log(errors);
+            var stringify = JSON.stringify(errors);
+            console.log('Strigfied:');
+            console.log(stringify);
+            }
+    }).done(function () {
+        $('#addClientsModal').modal('hide');
+        $(location).attr('href',urlGetClient);
     });
-    $('#addClientsModal').modal('hide');
-    $(location).attr('href',urlGetClient);});
+
+
+});
 $('.panel').find('.div-body-modal').find('.table').find('.btn-group').find('.dropdown-menu').find('#edit-client-modal-btn').on('click', function(event){
     event.preventDefault();
     clientId = event.target.dataset['clientid'];

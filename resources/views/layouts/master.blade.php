@@ -22,5 +22,7 @@
     <!-- DataTables -->
     <script src="{{URL::to('src/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{URL::to('https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js')}}"></script>
+    <!--Jquery Redirect-->
+    <script src="{{URL::to('src/plugins/jquery.redirect.js')}}"></script>
 </body>
 </html>

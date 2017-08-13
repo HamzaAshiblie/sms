@@ -7,10 +7,14 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    public function getClient()
+    public function getClient(Request $request)
     {
-        $clients = Client::paginate(1);
-        return view('client',['clients'=> $clients]);
+        $clients = Client::paginate();
+        if($request['message']!=null){
+            return view('client',['clients'=> $clients])->with('message');
+        }else{
+            return view('client',['clients'=> $clients]);
+        }
     }
 
     public function getClientSingle(Request $request)
